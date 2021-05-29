@@ -2,6 +2,8 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const ejs = require("ejs");
 const mongoose = require('mongoose');
+const dotenv = require("dotenv");
+dotenv.config();
 
 const app = express();
 
@@ -11,8 +13,10 @@ app.use(bodyParser.urlencoded({
   extended: true
 }));
 app.use(express.static("public"));
-mongoose.connect('mongodb://localhost:27017/booksDB', {useNewUrlParser: true, useUnifiedTopology: true});
+const url= "mongodb+srv://shubhrima:"+process.env.PASSWORD+"@cluster0.mjoba.mongodb.net/booksDB";
 
+
+mongoose.connect(url, {useNewUrlParser: true, useUnifiedTopology: true});
 
 const bookSchema = new mongoose.Schema({
   title: String,
@@ -100,5 +104,6 @@ if (port == null || port == "") {
   port = 3000;
 }
 app.listen(port,function(){
+
   console.log("Server working fine!");
 })
