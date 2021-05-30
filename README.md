@@ -10,8 +10,8 @@ cd rest-api  <br>
 nodemon app.js <br>
 
 
-Go to http://localhost:3000/books
-or 
-visit https://api-books-and-authors.herokuapp.com/books
+Go to http://localhost:3000/books <br>
+or <br>
+visit https://api-books-and-authors.herokuapp.com/books  <br><br>
 
 To search a specific book https://api-books-and-authors.herokuapp.com/books/Ikigai
